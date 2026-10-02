@@ -354,15 +354,16 @@ header {
 }
 
 
+```css
 /* =========================================
-   TECHNICAL SKILLS
+   TECHNICAL EXPERTISE
 ========================================= */
 
-.skills-grid {
+.expertise-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(2, 1fr);
 
     gap: 20px;
 
@@ -370,14 +371,27 @@ header {
 }
 
 
-.skill-card {
-    background: #0b1016;
+/* =========================================
+   EXPERTISE MAIN CARD
+========================================= */
+
+.expertise-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b1016,
+            #080c11
+        );
 
     border: 1px solid #202a34;
 
-    padding: 25px;
+    padding: 28px;
 
-    border-radius: 8px;
+    border-radius: 10px;
+
+    overflow: hidden;
 
     transition:
         transform 0.3s ease,
@@ -386,32 +400,285 @@ header {
 }
 
 
-.skill-card:hover {
+.expertise-card:hover {
     transform: translateY(-5px);
 
     border-color: #00ff9d;
 
     box-shadow:
-        0 10px 30px rgba(0, 255, 157, 0.06);
+        0 12px 30px rgba(0, 255, 157, 0.08);
 }
 
 
-.skill-card h3 {
+/* Green top accent */
+
+.expertise-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 2px;
+
+    background: #00ff9d;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.expertise-card:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* =========================================
+   EXPERTISE NUMBER
+========================================= */
+
+.expertise-number {
+    display: inline-block;
+
     color: #00ff9d;
 
-    font-size: 18px;
+    font-family: monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
 
     margin-bottom: 12px;
+
+    padding: 5px 8px;
+
+    background: #09150f;
+
+    border: 1px solid #1d3b30;
+
+    border-radius: 4px;
 }
 
 
-.skill-card p {
+/* =========================================
+   EXPERTISE TITLE
+========================================= */
+
+.expertise-card h3 {
+    color: #e6edf3;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+
+.expertise-card:hover h3 {
+    color: #00ff9d;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.expertise-card p {
     color: #8b949e;
 
     font-size: 14px;
 
     line-height: 1.7;
+
+    margin-bottom: 20px;
 }
+
+
+/* =========================================
+   SMALL EXPERTISE TILES
+========================================= */
+
+.expertise-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+/* Individual small box */
+
+.expertise-tags span {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 34px;
+
+    padding: 7px 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101820,
+            #0b1117
+        );
+
+    border: 1px solid #26313d;
+
+    border-radius: 6px;
+
+    color: #aab4bf;
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 0.2px;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Small green indicator */
+
+.expertise-tags span::before {
+    content: ">";
+
+    color: #00ff9d;
+
+    margin-right: 6px;
+
+    font-size: 10px;
+
+    opacity: 0.7;
+}
+
+
+/* Hover individual tile */
+
+.expertise-tags span:hover {
+    color: #00ff9d;
+
+    border-color: #00ff9d;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d1a16,
+            #0a1311
+        );
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 255, 157, 0.08);
+}
+
+
+/* =========================================
+   EXPERTISE CARD HOVER
+========================================= */
+
+.expertise-card:hover
+.expertise-tags span {
+    border-color: #303b46;
+}
+
+
+/* Keep hovered tile green */
+
+.expertise-card
+.expertise-tags span:hover {
+    border-color: #00ff9d;
+}
+
+
+/* =========================================
+   TECHNICAL EXPERTISE MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .expertise-card {
+        padding: 23px;
+    }
+
+
+    .expertise-card h3 {
+        font-size: 19px;
+    }
+
+
+    .expertise-card p {
+        font-size: 13px;
+    }
+
+
+    .expertise-tags {
+        gap: 8px;
+    }
+
+
+    .expertise-tags span {
+        min-height: 32px;
+
+        padding:
+            6px 10px;
+
+        font-size: 11px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .expertise-card {
+        padding: 20px;
+    }
+
+
+    .expertise-tags {
+        gap: 7px;
+    }
+
+
+    .expertise-tags span {
+        font-size: 10px;
+
+        padding:
+            6px 9px;
+    }
+
+}
+```
 
 
 /* =========================================
