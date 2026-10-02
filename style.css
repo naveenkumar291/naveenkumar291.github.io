@@ -29,7 +29,6 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
 
     background: rgba(7, 11, 16, 0.94);
@@ -100,7 +99,7 @@ header {
 
 
 /* =========================================
-   HERO SECTION
+   HERO
 ========================================= */
 
 .hero {
@@ -120,7 +119,6 @@ header {
             rgba(0, 255, 157, 0.07),
             transparent 30%
         ),
-
         #070b10;
 }
 
@@ -331,7 +329,7 @@ header {
 
 
 /* =========================================
-   ABOUT SECTION
+   ABOUT
 ========================================= */
 
 .about-content {
@@ -415,7 +413,7 @@ header {
 
 
 /* =========================================
-   PROJECTS SECTION
+   PROJECTS
 ========================================= */
 
 .projects-grid {
@@ -588,50 +586,44 @@ header {
 
 /* =========================================
    TECHNICAL EXPERTISE
+   PREMIUM SINGLE TILE
 ========================================= */
 
 .expertise-grid {
+    position: relative;
+
     display: grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 22px;
+    gap: 18px;
+
+    padding: 30px;
 
     margin-top: 30px;
-}
-
-
-/* =========================================
-   EXPERTISE CATEGORY CARD
-========================================= */
-
-.expertise-card {
-    position: relative;
 
     background:
         linear-gradient(
             145deg,
             #0b1016,
-            #080c11
+            #070b10
         );
 
-    border: 1px solid #202a34;
+    border: 1px solid #26313d;
 
-    padding: 28px;
+    border-radius: 14px;
 
-    border-radius: 10px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
 
     overflow: hidden;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
 
-.expertise-card::before {
+/* Outer green glow */
+
+.expertise-grid::before {
     content: "";
 
     position: absolute;
@@ -643,29 +635,88 @@ header {
 
     height: 2px;
 
-    background: #00ff9d;
-
-    transform: scaleX(0);
-
-    transform-origin: left;
-
-    transition:
-        transform 0.35s ease;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00ff9d,
+            transparent
+        );
 }
 
 
-.expertise-card:hover::before {
-    transform: scaleX(1);
+/* Subtle grid background */
+
+.expertise-grid::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 255, 157, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 255, 157, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+
+    pointer-events: none;
+
+    opacity: 0.35;
+}
+
+
+/* =========================================
+   EXPERTISE INDIVIDUAL TILES
+========================================= */
+
+.expertise-card {
+    position: relative;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            145deg,
+            #10171f,
+            #0b1016
+        );
+
+    border: 1px solid #202a34;
+
+    padding: 24px;
+
+    border-radius: 9px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
 .expertise-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
 
     border-color: #00ff9d;
 
+    background:
+        linear-gradient(
+            145deg,
+            #111c1b,
+            #0b1016
+        );
+
     box-shadow:
-        0 12px 35px rgba(0, 255, 157, 0.08);
+        0 10px 30px rgba(0, 255, 157, 0.07);
 }
 
 
@@ -686,7 +737,7 @@ header {
 
     padding: 5px 8px;
 
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 
     background: #09150f;
 
@@ -703,9 +754,9 @@ header {
 .expertise-card h3 {
     color: #e6edf3;
 
-    font-size: 20px;
+    font-size: 19px;
 
-    margin-bottom: 11px;
+    margin-bottom: 10px;
 
     transition:
         color 0.3s ease;
@@ -724,16 +775,16 @@ header {
 .expertise-card p {
     color: #8b949e;
 
-    font-size: 14px;
+    font-size: 13px;
 
     line-height: 1.7;
 
-    margin-bottom: 21px;
+    margin-bottom: 18px;
 }
 
 
 /* =========================================
-   SMALL TECHNICAL EXPERTISE TILES
+   SMALL TECHNOLOGY BOXES
 ========================================= */
 
 .expertise-tags {
@@ -741,84 +792,64 @@ header {
 
     flex-wrap: wrap;
 
-    gap: 10px;
+    gap: 8px;
 }
 
-
-/* Each technology becomes a separate box */
 
 .expertise-tags span {
     display: inline-flex;
 
     align-items: center;
 
-    min-height: 35px;
+    min-height: 32px;
 
-    padding: 7px 12px;
+    padding: 6px 10px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #101820,
-            #0b1117
-        );
+    background: #0b1117;
 
     border: 1px solid #293540;
 
-    border-radius: 6px;
+    border-radius: 5px;
 
     color: #aab4bf;
 
     font-family: monospace;
 
-    font-size: 11px;
-
-    letter-spacing: 0.2px;
-
-    cursor: default;
+    font-size: 10px;
 
     transition:
-        transform 0.25s ease,
         color 0.25s ease,
         border-color 0.25s ease,
         background 0.25s ease,
+        transform 0.25s ease,
         box-shadow 0.25s ease;
 }
 
 
-/* Terminal-style indicator */
+/* Terminal symbol */
 
 .expertise-tags span::before {
     content: ">";
 
     color: #00ff9d;
 
-    font-size: 10px;
+    margin-right: 5px;
 
-    margin-right: 6px;
-
-    opacity: 0.8;
+    font-size: 9px;
 }
 
-
-/* Individual tile hover */
 
 .expertise-tags span:hover {
     color: #00ff9d;
 
     border-color: #00ff9d;
 
-    background:
-        linear-gradient(
-            145deg,
-            #0d1a16,
-            #0a1311
-        );
+    background: #0d1915;
 
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 
     box-shadow:
-        0 5px 15px rgba(0, 255, 157, 0.08);
+        0 4px 12px rgba(0, 255, 157, 0.07);
 }
 
 
@@ -904,10 +935,12 @@ footer p {
             repeat(2, 1fr);
     }
 
+
     .projects-grid {
         grid-template-columns:
             1fr;
     }
+
 
     .expertise-grid {
         grid-template-columns:
@@ -922,8 +955,6 @@ footer p {
 ========================================= */
 
 @media (max-width: 768px) {
-
-    /* Navigation */
 
     .navbar {
         justify-content: center;
@@ -999,36 +1030,35 @@ footer p {
     /* Grids */
 
     .skills-grid,
-    .projects-grid,
-    .expertise-grid {
+    .projects-grid {
         grid-template-columns:
             1fr;
     }
 
 
-    /* Skill cards */
+    /* Expertise outer tile */
 
-    .skill-card {
-        padding: 22px;
-    }
+    .expertise-grid {
+        grid-template-columns:
+            1fr;
 
+        padding: 18px;
 
-    /* Project cards */
+        gap: 15px;
 
-    .project-card {
-        padding: 25px;
+        border-radius: 11px;
     }
 
 
     /* Expertise cards */
 
     .expertise-card {
-        padding: 23px;
+        padding: 21px;
     }
 
 
     .expertise-card h3 {
-        font-size: 19px;
+        font-size: 18px;
     }
 
 
@@ -1037,20 +1067,20 @@ footer p {
     }
 
 
-    /* Expertise tiles */
+    /* Small technology tiles */
 
     .expertise-tags {
-        gap: 8px;
+        gap: 7px;
     }
 
 
     .expertise-tags span {
-        min-height: 33px;
+        min-height: 31px;
 
         padding:
-            6px 10px;
+            6px 9px;
 
-        font-size: 11px;
+        font-size: 10px;
     }
 
 
@@ -1087,9 +1117,20 @@ footer p {
     }
 
 
-    .project-card,
-    .expertise-card {
+    .project-card {
         padding: 20px;
+    }
+
+
+    .expertise-grid {
+        padding: 12px;
+
+        gap: 12px;
+    }
+
+
+    .expertise-card {
+        padding: 19px;
     }
 
 
@@ -1099,25 +1140,15 @@ footer p {
 
 
     .expertise-card h3 {
-        font-size: 18px;
-    }
-
-
-    .expertise-card p {
-        font-size: 13px;
-    }
-
-
-    .expertise-tags {
-        gap: 7px;
+        font-size: 17px;
     }
 
 
     .expertise-tags span {
-        font-size: 10px;
+        font-size: 9px;
 
         padding:
-            6px 9px;
+            5px 8px;
     }
 
 }
