@@ -2,6 +2,7 @@
 /* =========================================
    GLOBAL RESET
 ========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -99,7 +100,7 @@ header {
 
 
 /* =========================================
-   HERO
+   HERO SECTION
 ========================================= */
 
 .hero {
@@ -330,7 +331,7 @@ header {
 
 
 /* =========================================
-   ABOUT
+   ABOUT SECTION
 ========================================= */
 
 .about-content {
@@ -353,16 +354,15 @@ header {
 }
 
 
-```css
 /* =========================================
-   TECHNICAL EXPERTISE
+   TECHNICAL SKILLS
 ========================================= */
 
-.expertise-grid {
+.skills-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+        repeat(3, 1fr);
 
     gap: 20px;
 
@@ -370,27 +370,14 @@ header {
 }
 
 
-/* =========================================
-   EXPERTISE MAIN CARD
-========================================= */
-
-.expertise-card {
-    position: relative;
-
-    background:
-        linear-gradient(
-            145deg,
-            #0b1016,
-            #080c11
-        );
+.skill-card {
+    background: #0b1016;
 
     border: 1px solid #202a34;
 
-    padding: 28px;
+    padding: 25px;
 
-    border-radius: 10px;
-
-    overflow: hidden;
+    border-radius: 8px;
 
     transition:
         transform 0.3s ease,
@@ -399,289 +386,36 @@ header {
 }
 
 
-.expertise-card:hover {
+.skill-card:hover {
     transform: translateY(-5px);
 
     border-color: #00ff9d;
 
     box-shadow:
-        0 12px 30px rgba(0, 255, 157, 0.08);
+        0 10px 30px rgba(0, 255, 157, 0.06);
 }
 
 
-/* Green top accent */
-
-.expertise-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    height: 2px;
-
-    background: #00ff9d;
-
-    transform: scaleX(0);
-
-    transform-origin: left;
-
-    transition:
-        transform 0.3s ease;
-}
-
-
-.expertise-card:hover::before {
-    transform: scaleX(1);
-}
-
-
-/* =========================================
-   EXPERTISE NUMBER
-========================================= */
-
-.expertise-number {
-    display: inline-block;
-
+.skill-card h3 {
     color: #00ff9d;
 
-    font-family: monospace;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
+    font-size: 18px;
 
     margin-bottom: 12px;
-
-    padding: 5px 8px;
-
-    background: #09150f;
-
-    border: 1px solid #1d3b30;
-
-    border-radius: 4px;
 }
 
 
-/* =========================================
-   EXPERTISE TITLE
-========================================= */
-
-.expertise-card h3 {
-    color: #e6edf3;
-
-    font-size: 20px;
-
-    margin-bottom: 10px;
-}
-
-
-.expertise-card:hover h3 {
-    color: #00ff9d;
-}
-
-
-/* =========================================
-   DESCRIPTION
-========================================= */
-
-.expertise-card p {
+.skill-card p {
     color: #8b949e;
 
     font-size: 14px;
 
     line-height: 1.7;
-
-    margin-bottom: 20px;
 }
 
 
 /* =========================================
-   SMALL EXPERTISE TILES
-========================================= */
-
-.expertise-tags {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-}
-
-
-/* Individual small box */
-
-.expertise-tags span {
-    position: relative;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-height: 34px;
-
-    padding: 7px 12px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #101820,
-            #0b1117
-        );
-
-    border: 1px solid #26313d;
-
-    border-radius: 6px;
-
-    color: #aab4bf;
-
-    font-family: monospace;
-
-    font-size: 12px;
-
-    letter-spacing: 0.2px;
-
-    transition:
-        transform 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-/* Small green indicator */
-
-.expertise-tags span::before {
-    content: ">";
-
-    color: #00ff9d;
-
-    margin-right: 6px;
-
-    font-size: 10px;
-
-    opacity: 0.7;
-}
-
-
-/* Hover individual tile */
-
-.expertise-tags span:hover {
-    color: #00ff9d;
-
-    border-color: #00ff9d;
-
-    background:
-        linear-gradient(
-            145deg,
-            #0d1a16,
-            #0a1311
-        );
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 5px 15px rgba(0, 255, 157, 0.08);
-}
-
-
-/* =========================================
-   EXPERTISE CARD HOVER
-========================================= */
-
-.expertise-card:hover
-.expertise-tags span {
-    border-color: #303b46;
-}
-
-
-/* Keep hovered tile green */
-
-.expertise-card
-.expertise-tags span:hover {
-    border-color: #00ff9d;
-}
-
-
-/* =========================================
-   TECHNICAL EXPERTISE MOBILE
-========================================= */
-
-@media (max-width: 900px) {
-
-    .expertise-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-@media (max-width: 768px) {
-
-    .expertise-card {
-        padding: 23px;
-    }
-
-
-    .expertise-card h3 {
-        font-size: 19px;
-    }
-
-
-    .expertise-card p {
-        font-size: 13px;
-    }
-
-
-    .expertise-tags {
-        gap: 8px;
-    }
-
-
-    .expertise-tags span {
-        min-height: 32px;
-
-        padding:
-            6px 10px;
-
-        font-size: 11px;
-    }
-
-}
-
-
-@media (max-width: 480px) {
-
-    .expertise-card {
-        padding: 20px;
-    }
-
-
-    .expertise-tags {
-        gap: 7px;
-    }
-
-
-    .expertise-tags span {
-        font-size: 10px;
-
-        padding:
-            6px 9px;
-    }
-
-}
-```
-
-
-/* =========================================
-   PROJECTS
+   PROJECTS SECTION
 ========================================= */
 
 .projects-grid {
@@ -769,6 +503,10 @@ header {
 }
 
 
+/* =========================================
+   PROJECT TAGS
+========================================= */
+
 .tags {
     display: flex;
 
@@ -800,11 +538,6 @@ header {
 }
 
 
-.project-card:hover .tags span {
-    border-color: #34414e;
-}
-
-
 .tags span:hover {
     color: #00ff9d;
 
@@ -813,6 +546,10 @@ header {
     background: #0d1718;
 }
 
+
+/* =========================================
+   PROJECT LINKS
+========================================= */
 
 .project-links {
     display: flex;
@@ -865,6 +602,10 @@ header {
 }
 
 
+/* =========================================
+   EXPERTISE CATEGORY CARD
+========================================= */
+
 .expertise-card {
     position: relative;
 
@@ -877,7 +618,7 @@ header {
 
     border: 1px solid #202a34;
 
-    padding: 30px;
+    padding: 28px;
 
     border-radius: 10px;
 
@@ -889,8 +630,6 @@ header {
         box-shadow 0.3s ease;
 }
 
-
-/* Green top line */
 
 .expertise-card::before {
     content: "";
@@ -915,45 +654,24 @@ header {
 }
 
 
-/* Subtle background glow */
-
-.expertise-card::after {
-    content: "";
-
-    position: absolute;
-
-    width: 150px;
-
-    height: 150px;
-
-    right: -80px;
-
-    bottom: -80px;
-
-    background: rgba(0, 255, 157, 0.04);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-
-.expertise-card:hover {
-    transform: translateY(-7px);
-
-    border-color: #00ff9d;
-
-    box-shadow:
-        0 12px 35px rgba(0, 255, 157, 0.09);
-}
-
-
 .expertise-card:hover::before {
     transform: scaleX(1);
 }
 
 
-/* Expertise number */
+.expertise-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #00ff9d;
+
+    box-shadow:
+        0 12px 35px rgba(0, 255, 157, 0.08);
+}
+
+
+/* =========================================
+   EXPERTISE NUMBER
+========================================= */
 
 .expertise-number {
     display: inline-block;
@@ -962,30 +680,32 @@ header {
 
     font-family: monospace;
 
-    font-size: 12px;
+    font-size: 11px;
 
     letter-spacing: 2px;
 
-    margin-bottom: 16px;
-
     padding: 5px 8px;
 
-    border: 1px solid #1d3b30;
+    margin-bottom: 13px;
 
     background: #09150f;
+
+    border: 1px solid #1d3b30;
 
     border-radius: 4px;
 }
 
 
-/* Expertise title */
+/* =========================================
+   EXPERTISE TITLE
+========================================= */
 
 .expertise-card h3 {
     color: #e6edf3;
 
-    font-size: 22px;
+    font-size: 20px;
 
-    margin-bottom: 13px;
+    margin-bottom: 11px;
 
     transition:
         color 0.3s ease;
@@ -997,68 +717,108 @@ header {
 }
 
 
-/* Expertise description */
+/* =========================================
+   EXPERTISE DESCRIPTION
+========================================= */
 
 .expertise-card p {
     color: #8b949e;
 
     font-size: 14px;
 
-    line-height: 1.75;
+    line-height: 1.7;
 
-    margin-bottom: 22px;
-
-    max-width: 95%;
+    margin-bottom: 21px;
 }
 
 
-/* Expertise tags */
+/* =========================================
+   SMALL TECHNICAL EXPERTISE TILES
+========================================= */
 
 .expertise-tags {
     display: flex;
 
     flex-wrap: wrap;
 
-    gap: 8px;
+    gap: 10px;
 }
 
 
+/* Each technology becomes a separate box */
+
 .expertise-tags span {
-    background: #111820;
+    display: inline-flex;
 
-    border: 1px solid #26313d;
+    align-items: center;
 
-    color: #9da7b3;
+    min-height: 35px;
 
-    padding: 6px 10px;
+    padding: 7px 12px;
 
-    border-radius: 4px;
+    background:
+        linear-gradient(
+            145deg,
+            #101820,
+            #0b1117
+        );
 
-    font-size: 11px;
+    border: 1px solid #293540;
+
+    border-radius: 6px;
+
+    color: #aab4bf;
 
     font-family: monospace;
 
+    font-size: 11px;
+
+    letter-spacing: 0.2px;
+
+    cursor: default;
+
     transition:
-        color 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease,
-        transform 0.3s ease;
+        transform 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
-.expertise-card:hover .expertise-tags span {
-    border-color: #34414e;
+/* Terminal-style indicator */
+
+.expertise-tags span::before {
+    content: ">";
+
+    color: #00ff9d;
+
+    font-size: 10px;
+
+    margin-right: 6px;
+
+    opacity: 0.8;
 }
 
+
+/* Individual tile hover */
 
 .expertise-tags span:hover {
     color: #00ff9d;
 
     border-color: #00ff9d;
 
-    background: #0d1718;
+    background:
+        linear-gradient(
+            145deg,
+            #0d1a16,
+            #0a1311
+        );
 
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 255, 157, 0.08);
 }
 
 
@@ -1134,7 +894,7 @@ footer p {
 
 
 /* =========================================
-   RESPONSIVE DESIGN
+   TABLET
 ========================================= */
 
 @media (max-width: 900px) {
@@ -1163,6 +923,8 @@ footer p {
 
 @media (max-width: 768px) {
 
+    /* Navigation */
+
     .navbar {
         justify-content: center;
     }
@@ -1172,6 +934,8 @@ footer p {
         display: none;
     }
 
+
+    /* Hero */
 
     .hero {
         padding:
@@ -1194,6 +958,8 @@ footer p {
     }
 
 
+    /* Buttons */
+
     .hero-buttons {
         flex-direction: column;
 
@@ -1209,6 +975,8 @@ footer p {
         text-align: center;
     }
 
+
+    /* Sections */
 
     .section {
         padding:
@@ -1228,6 +996,8 @@ footer p {
     }
 
 
+    /* Grids */
+
     .skills-grid,
     .projects-grid,
     .expertise-grid {
@@ -1236,32 +1006,55 @@ footer p {
     }
 
 
+    /* Skill cards */
+
     .skill-card {
         padding: 22px;
     }
 
+
+    /* Project cards */
 
     .project-card {
         padding: 25px;
     }
 
 
+    /* Expertise cards */
+
     .expertise-card {
-        padding: 25px;
+        padding: 23px;
     }
 
 
     .expertise-card h3 {
-        font-size: 20px;
+        font-size: 19px;
     }
 
 
     .expertise-card p {
-        font-size: 14px;
-
-        max-width: 100%;
+        font-size: 13px;
     }
 
+
+    /* Expertise tiles */
+
+    .expertise-tags {
+        gap: 8px;
+    }
+
+
+    .expertise-tags span {
+        min-height: 33px;
+
+        padding:
+            6px 10px;
+
+        font-size: 11px;
+    }
+
+
+    /* Contact */
 
     .contact-links {
         flex-direction: column;
@@ -1296,26 +1089,35 @@ footer p {
 
     .project-card,
     .expertise-card {
-        padding: 22px;
+        padding: 20px;
     }
 
 
     .expertise-number {
-        font-size: 11px;
+        font-size: 10px;
     }
 
 
     .expertise-card h3 {
-        font-size: 19px;
+        font-size: 18px;
     }
 
 
-    .tags span,
+    .expertise-card p {
+        font-size: 13px;
+    }
+
+
+    .expertise-tags {
+        gap: 7px;
+    }
+
+
     .expertise-tags span {
         font-size: 10px;
 
         padding:
-            5px 8px;
+            6px 9px;
     }
 
 }
