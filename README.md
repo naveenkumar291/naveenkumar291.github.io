@@ -1,5 +1,5 @@
 # naveenkumar291.github.io
 
-## 📄 Resume
-
-[View My Resume](./resume/NaveenKumar_Murugesan_Resume.pdf)
+<a href="./resume/Naveenkumar_Murugesan_Resume.pdf">
+  📄 View My Resume
+</a>
